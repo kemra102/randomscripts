@@ -22,7 +22,7 @@ createmydb () {
 
 2innodb () {
   if $MYISAM2INNODB; then
-    sed -ir 's/MyISAM/InnoDB/g' $1
+    sed -i -r 's/MyISAM/InnoDB/g' $1
   fi
 }
 
