@@ -16,7 +16,7 @@ uncompress () {
   fi
 }
 
-createdb () {
+createmydb () {
   mysql -h$DBHOST -u$DBUSER -p$DBPASS -e "CREATE DATABASE IF NOT EXISTS $1"
 }
 
@@ -37,7 +37,7 @@ for db in ${databases[@]}; do
   if [ "$dbname" == 'mysql' ]; then
     break
   fi
-  createdb $dbname
+  createmydb $dbname
   2innodb $filename
   importdb $dbname $filename
 done
