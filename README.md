@@ -13,3 +13,11 @@ It has the following features:
 * Can uncompress dumps if they are compressed.
 * Can change tables types from MyISAM to InnoDB.
 
+### mysql_dump.sh
+
+This script dumps all MySQL databases (with the exception of the `mysql` database) on the taregt server.
+
+It has the following features:
+
+* Can compress dumps as they are being performed (saving on disk space immediately).
+* Has a retention policy (default is 3 days) keeping the *x* latest days of dumps for each database.
