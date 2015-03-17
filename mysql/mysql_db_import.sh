@@ -35,7 +35,7 @@ for db in "${databases[@]}"; do
   filename="${db/.gz/}"
   dbname="${db/.sql/}"
   if [ "$dbname" == 'mysql' ]; then
-    break
+    continue
   fi
   createmydb "$dbname"
   2innodb "$filename"
