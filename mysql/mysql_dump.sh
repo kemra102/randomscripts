@@ -13,7 +13,7 @@ checkexistingbackups () {
   if $COMPRESS; then
     oldbackup="$BACKUPDIR/$1-$(date --date="$RETENTION days ago" +"%Y%m%d").sql.gz"
   else
-    oldbackup="$BACKUPDIR/$1-$(date --date="3 days ago" +"%Y%m%d").sql"
+    oldbackup="$BACKUPDIR/$1-$(date --date="$RETENTION days ago" +"%Y%m%d").sql"
   fi
   if [ -e "$oldbackup" ]; then
     rm -f "$oldbackup"
