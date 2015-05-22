@@ -21,3 +21,10 @@ It has the following features:
 
 * Can compress dumps as they are being performed (saving on disk space immediately).
 * Has a retention policy (default is 3 days) keeping the *x* latest days of dumps for each database.
+
+### mysql_xtrabackup.sh
+
+This script does a backup of an entire MySQL database instance using Percona's Xtrabackup utility.
+
+* Can compress dumps as they are being performed (saving on disk space immediately).
+* Has a retention policy (default is 3 days) keeping the *x* latest days of dumps for each database.
