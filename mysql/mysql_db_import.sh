@@ -22,9 +22,9 @@ createmydb () {
 
 importdb () {
   if $GZIPPED; then
-    gunzip < "$db" | mysql -h$DBHOST -u$DBUSER -p$DBPASS "$2" < "$3"
+    gunzip < "$2" | mysql -h$DBHOST -u$DBUSER -p$DBPASS "$1" < "$2"
   else
-    mysql -h$DBHOST -u$DBUSER -p$DBPASS "$2" < "$3"
+    mysql -h$DBHOST -u$DBUSER -p$DBPASS "$1" < "$2"
   fi
 }
 
@@ -36,5 +36,5 @@ for db in "${databases[@]}"; do
   fi
   createmydb "$dbname"
   2innodb "$filename"
-  importdb "$db" "$dbname" "$filename"
+  importdb "$dbname" "$filename"
 done
